@@ -9,9 +9,9 @@ def navigator(url,head,handle):
     print (url,":")
     print (r.data.decode('utf-8'))
     t =  r.data.decode('utf-8')
-    helper = "href=\".*" + ".*/index.html"
-    if re.search(helper, t, re.IGNORECASE):
-        m = re.search(helper, t, re.IGNORECASE)
+    helper = r"\"/.*/index.html\"(\S+)"
+    if re.search(helper, t):
+        m = re.search(helper, t)
 
         print ()
         print (m)
