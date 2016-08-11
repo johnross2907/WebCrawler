@@ -9,13 +9,13 @@ def navigator(url,head,handle):
     print (url,":")
     print (r.data.decode('utf-8'))
     t =  r.data.decode('utf-8')
-    helper = r"\"/.*/index.html\"(\S+)"
+    helper = r"href=\"(\S+)"
     if re.search(helper, t):
         m = re.search(helper, t)
 
         print ()
         print (m)
-        print (m.group(0))
+        print (m.group(1))
     else:
         print ("No links found!")
     #if already visited skip
